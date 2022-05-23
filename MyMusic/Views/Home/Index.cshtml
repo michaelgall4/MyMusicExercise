@@ -1,0 +1,15 @@
+﻿@*@model IEnumerable<MyMusic.Models.ArtistaViewModel>*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Libreria Musicale</h1>
+    <h2 class="display-5">Scegli cosa vuoi visualizzare</h2>   
+</div>
+<table class="table">
+    <tr>
+        <td>@Html.ActionLink("Artista", "ArtistaIndex")</td>
+    </tr>
+
+</table>

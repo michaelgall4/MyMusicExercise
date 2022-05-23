@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MyMusic.Models.ArtistaViewModel>;
+@{
+    ViewBag.Title = "ArtistaIndex";
+}
+
+
+    <h1 class="display-4">Lista degli Artisti</h1>
+    <table class="table">
+        <tr>
+            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Nome)</th>
+            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Cognome)</th>
+            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Aka)</th>
+            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Tipo)</th>
+        </tr>
+  @if(Model != null && Model.Any())
+    {
+       foreach(var artista in Model)
+        {
+            <tr>
+                <td>@artista.Nome</td>
+                <td>@artista.Cognome</td>
+                <td>@artista.Aka</td>
+                <td>@artista.Tipo</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { IdArtista=artista.IdArtista}) |
+                    @Html.ActionLink("Add", "Add", new { IdArtista=artista.IdArtista}) |
+                    @Html.ActionLink("Details", "Details", new { IdArtista=artista.IdArtista})
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <td colspan=5 class="text-center"> Nessun artista trovato</td>
+    }
+</table>
