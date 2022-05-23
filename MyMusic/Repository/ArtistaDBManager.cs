@@ -22,7 +22,7 @@ namespace MyMusic.Repository
             {
                 artista = new ArtistaViewModel()
                 {
-                    IdArtista = Convert.ToInt32(reader["ID Artista"].ToString()),
+                    IdArtista = Convert.ToInt32(reader["IdArtista"].ToString()),
                     Nome = reader["Nome"].ToString(),
                     Cognome = reader["Cognome"].ToString(),
                     Aka = reader["Aka"].ToString(),

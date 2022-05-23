@@ -7,10 +7,10 @@
     <h1 class="display-4">Lista degli Artisti</h1>
     <table class="table">
         <tr>
-            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Nome)</th>
-            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Cognome)</th>
-            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Aka)</th>
-            <th>@Html.DisplayNameFor(ArtistaViewModel=>ArtistaViewModel.Tipo)</th>
+            <th>@Html.DisplayNameFor(model=>model.Nome)</th>
+            <th>@Html.DisplayNameFor(model=>model.Cognome)</th>
+            <th>@Html.DisplayNameFor(model=>model.Aka)</th>
+            <th>@Html.DisplayNameFor(model=>model.Tipo)</th>
         </tr>
   @if(Model != null && Model.Any())
     {
@@ -23,7 +23,7 @@
                 <td>@artista.Tipo</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { IdArtista=artista.IdArtista}) |
-                    @Html.ActionLink("Add", "Add", new { IdArtista=artista.IdArtista}) |
+                    @Html.ActionLink("Add", "ArtistaAdd", new { IdArtista=artista.IdArtista}) |
                     @Html.ActionLink("Details", "Details", new { IdArtista=artista.IdArtista})
                 </td>
             </tr>

@@ -26,50 +26,50 @@ namespace MyMusic.Controllers
             return View(artistaDBManager.GetAllArtisti());
         }
 
-        [HttpGet]
-        public IActionResult Edit(int id)
-        {
-            var artista = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == id).FirstOrDefault();
-            return View(artista);
-        }
+        //[HttpGet]
+        //public IActionResult EditArtista(int id)
+        //{
+        //    var artista = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == id).FirstOrDefault();
+        //    return View(artista);
+        //}
 
-        [HttpPost]
-        public IActionResult Edit(ArtistaViewModel artista)
-        {
-            var res = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == artista.IdArtista).FirstOrDefault();
-            if (res != null)
-                artistaDBManager.EditArtista(artista);
-            return RedirectToAction("ArtistaIndex");
-        }
+        //[HttpPost]
+        //public IActionResult EditArtista(ArtistaViewModel artista)
+        //{
+        //    var res = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == artista.IdArtista).FirstOrDefault();
+        //    if (res != null)
+        //        artistaDBManager.EditArtista(artista);
+        //    return RedirectToAction("ArtistaIndex");
+        //}
 
-        [HttpGet]
-        public IActionResult Add()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public IActionResult ArtistaAdd()
+        //{
+        //    return View();
+        //}
 
-        [HttpPost]
-        public IActionResult Add(ArtistaViewModel artista)
-        {
-            artistaDBManager.AddArtista(artista);
-            return RedirectToAction("ArtistaIndex");
-        }
+        //[HttpPost]
+        //public IActionResult ArtistaAdd(ArtistaViewModel artista)
+        //{
+        //    artistaDBManager.AddArtista(artista);
+        //    return RedirectToAction("ArtistaIndex");
+        //}
 
-        [HttpGet]
-        public IActionResult Details(int id)
-        {
-            var artista = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == id).FirstOrDefault();
-            return View(artista);
-        }
+        //[HttpGet]
+        //public IActionResult DetailsArtista(int id)
+        //{
+        //    var artista = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == id).FirstOrDefault();
+        //    return View(artista);
+        //}
 
-        [HttpPost]
-        public IActionResult Details(ArtistaViewModel artista)
-        {
-            var res = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == artista.IdArtista).FirstOrDefault();
-            if (res != null)
-                artistaDBManager.DetailsArtista(artista);
-            return RedirectToAction("ArtistaIndex");
-        }
+        //[HttpPost]
+        //public IActionResult DetailsArtista(ArtistaViewModel artista)
+        //{
+        //    var res = artistaDBManager.GetAllArtisti().Where(x => x.IdArtista == artista.IdArtista).FirstOrDefault();
+        //    if (res != null)
+        //        artistaDBManager.DetailsArtista(artista);
+        //    return RedirectToAction("ArtistaIndex");
+        //}
 
             public IActionResult Privacy()
         {
